@@ -26,9 +26,9 @@ public class Hangman {
         System.out.println("Good luck and have fun!");
 
         while (incorrectGuesses < MAX_TRIES) {
-            String guess = readFromUser();
             System.out.println("\nA word to guess: " + hiddenWord.toString());
             System.out.print("Enter a letter or try to guess the whole word: ");
+            String guess = readFromUser();
 
             if (guess.length() == 1) {
                 char letter = guess.charAt(0);
@@ -40,7 +40,7 @@ public class Hangman {
                 guessedLetters.add(letter);
 
                 if (word.contains(String.valueOf(letter))) {
-                    update(word, hiddenWord, letter); //update hidden word
+                    updateWord(word, hiddenWord, letter); //update hidden word
                     if (!hiddenWord.toString().contains("_")) {
                         System.out.println("Congratulations! You guessed the word: " + hiddenWord.toString());
                         return;
@@ -65,7 +65,7 @@ public class Hangman {
             }
         }
 
-        System.out.println("\nYou lost! You failed to guess the word. The guessed word is:" + word);
+        System.out.println("\nYou lost! You failed to guess the word. The guessed word is: " + word);
         System.out.println("\nThank you for playing");
     }
 
@@ -102,7 +102,7 @@ public class Hangman {
         return input;
     }
 
-    private static void update(String word, StringBuilder hiddenWord, char guess) {
+    private static void updateWord(String word, StringBuilder hiddenWord, char guess) {
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == guess) {
                 hiddenWord.setCharAt(i, guess);
