@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Wisielec {
+public class hangman {
     private static final String API_URL = "https://random-word-api.herokuapp.com/word";
     private static final int MAX_TRIES = 10;
 
