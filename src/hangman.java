@@ -20,6 +20,11 @@ public class hangman {
             hiddenWord.append("_");
         }
 
+        System.out.println("Welcome to HANGMAN!");
+        System.out.println("Try to guess the word. You can enter individual letters or a whole word");
+        System.out.println("You have 10 attempts to guess the word.");
+        System.out.println("Good luck and have fun!");
+
         while (incorrectGuesses < MAX_TRIES) {
             String guess = readFromUser();
 
